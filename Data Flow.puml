@@ -1,0 +1,17 @@
+@startuml
+
+node "Architecture Application" {
+    component "Activity" as activity
+    component "View Model" as viewModel
+    component "Repository"" as repository
+}
+
+database "SQL Lite" as databaseSQL
+database "Data Store" as datastore
+
+activity <--> viewModel
+viewModel <--> repository
+repository <--> databaseSQL
+repository <--> datastore
+
+@enduml

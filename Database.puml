@@ -1,0 +1,13 @@
+@startuml
+
+entity "table_todo" as table_todo {
+    *todo_uuid : String <<generated>>
+    --
+    *todo_title : String
+    *todo_description : String @nullable
+    *todo_due : Long
+    *todo_created_at : Long
+    *todo_updated_at : Long
+}
+
+@enduml
