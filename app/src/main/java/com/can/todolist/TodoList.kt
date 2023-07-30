@@ -1,10 +1,11 @@
 package com.can.todolist
 
 import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
-//@HiltAndroidApp
-class App : Application() {
+@HiltAndroidApp
+class TodoList : Application() {
 
     override fun onCreate() {
         super.onCreate()

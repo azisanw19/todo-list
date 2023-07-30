@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.hiltAndroid)
     alias(libs.plugins.ksp)
+    kotlin("kapt")
 }
 
 android {
@@ -72,6 +73,9 @@ dependencies {
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
 
+    /* Navigation */
+    implementation(libs.navigation.compose)
+
     /* Testing */
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
@@ -81,17 +85,18 @@ dependencies {
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
 
-    /* RxJava */
-    implementation(libs.rxandroid)
-
     /* Timber logger */
     implementation(libs.timber)
 
     /* Dependency Injection Dagger Hilt */
     implementation(libs.hilt.android)
-    ksp(libs.hilt.android.compiler)
+    implementation(libs.hilt.navigation.compose)
+    kapt(libs.hilt.android.compiler)
 
     /* Room SQL Lite Database */
     implementation(libs.room.ktx)
     ksp(libs.room.compiler)
+
+    /* ViewModel */
+    implementation(libs.lifecycle.viewmodel.compose)
 }

@@ -1,11 +1,12 @@
 @startuml
 
-entity "table_todo" as table_todo {
+entity "table_todo" as todo {
     *todo_uuid : String <<generated>>
     --
     *todo_title : String
     *todo_description : String @nullable
-    *todo_due : Long
+    *todo_due_at : Long
+    *todo_is_done : Boolean = false
     *todo_created_at : Long
     *todo_updated_at : Long
 }
